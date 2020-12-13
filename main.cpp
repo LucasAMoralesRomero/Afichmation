@@ -13,6 +13,8 @@ int main(int argc, char *argv[]){
 	anim.Add("jump", {6}, 8, false);
 	anim.Add("stairs", {7, 8}, 8, true);
 	anim.Play("idle");
+	
+	//anim.SetScaleSprite(Vector2f(2.f, 2.f));
 	anim.setScale(Vector2f(2.f, 2.f));
 	
 	while(w->isOpen()) {

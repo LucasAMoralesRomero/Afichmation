@@ -1,10 +1,10 @@
 #include "Afichmation.h"
 
-Afichmation::Afichmation(string path, bool loop, int width, int height){
+Afichmation::Afichmation(string name, bool loop, int width, int height){
 	texture = new Texture();
 	this->width = width;
 	this->height = height;
-	texture->loadFromFile(path);
+	texture->loadFromFile(name);
 	isLooping = loop;
 	setTexture(*texture);
 	frame = IntRect(0, 0, this->width, this->height);
@@ -16,11 +16,6 @@ Afichmation::Afichmation(string path, bool loop, int width, int height){
 	setOrigin(width / 2, height / 2);
 	setPosition((width * getScale().x) / 2, (height * getScale().y) / 2);
 	clock.restart();
-}
-
-Afichmation::~Afichmation() {
-	delete texture;
-	delete animation;
 }
 
 void Afichmation::FlipX(bool isFlipped) {
