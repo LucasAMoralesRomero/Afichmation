@@ -15,11 +15,11 @@ tab_width=4
 tab_use_spaces=0
 explorer_path=.
 inherits_from=
-current_source=main.cpp
+current_source=Afichmation.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=55:41
+cursor=15:1
 open=true
 [source]
 path=Afichmation.cpp

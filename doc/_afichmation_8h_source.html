@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.20"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Afichmation: Fichero Fuente Afichmation.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Afichmation
+   &#160;<span id="projectnumber">0.9</span>
+   </div>
+   <div id="projectbrief">Clase que implementa spritesheets en SFML 2.5</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.8.20 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Buscar');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Buscar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Afichmation.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_afichmation_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifndef AFICHMATION_H</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define AFICHMATION_H</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &lt;initializer_list&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;SFML/Graphics.hpp&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">using namespace </span>sf;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_afichmation.html">   29</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_afichmation.html">Afichmation</a> : <span class="keyword">public</span> Sprite {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    Texture *texture;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    Clock clock;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    list&lt;Animation&gt; animations;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="class_animation.html">Animation</a> *animation;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">bool</span> flippedX;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">bool</span> flippedY;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">bool</span> isLooping;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> playing;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> width, height;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    IntRect frame;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> SetCurrentFrame();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> UpdateScale();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="class_afichmation.html#a5dd659052c26d05c2ba62156a943c6cd">   99</a></span>&#160;    <a class="code" href="class_afichmation.html#a5dd659052c26d05c2ba62156a943c6cd">Afichmation</a>() {}</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="class_afichmation.html">Afichmation</a>(<span class="keywordtype">string</span> path, <span class="keywordtype">bool</span> loop, <span class="keywordtype">int</span> width, <span class="keywordtype">int</span> height);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    ~<a class="code" href="class_afichmation.html">Afichmation</a>();</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> FlipX(<span class="keywordtype">bool</span> isFlipped);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> FlipY(<span class="keywordtype">bool</span> isFlipped);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    </div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordtype">void</span> Add(<span class="keywordtype">string</span> name, initializer_list&lt;int&gt; frames, <span class="keywordtype">int</span> fps, <span class="keywordtype">bool</span> loop);</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    </div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    <span class="keywordtype">void</span> Play(<span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    </div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordtype">bool</span> IsPlaying(<span class="keywordtype">string</span> name);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordtype">void</span> Update();</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    </div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    </div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> setPosition(<span class="keywordtype">float</span> x, <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    </div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> setPosition(<span class="keyword">const</span> Vector2f &amp;position);</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    </div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordtype">void</span> setScale(<span class="keywordtype">float</span> factorx, <span class="keywordtype">float</span> factory);</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordtype">void</span> setScale(<span class="keyword">const</span> Vector2f &amp;factors);</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    </div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    </div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keyword">const</span> Vector2f &amp;getScale();</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;};</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160; </div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160; </div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno"><a class="line" href="class_animation.html">  206</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_animation.html">Animation</a> {</div>
+<div class="line"><a name="l00207"></a><span class="lineno"><a class="line" href="class_animation.html#a5f019df02ac5ba1cedacb8c0d54085f4">  207</a></span>&#160;    <span class="keyword">friend</span> <span class="keyword">class </span><a class="code" href="class_afichmation.html">Afichmation</a>;</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="keywordtype">string</span> name;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    initializer_list&lt;int&gt; frames;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    <span class="keywordtype">bool</span> loop;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    </div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">int</span> fps;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    </div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;    </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="keywordtype">int</span> frame;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    </div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    </div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordtype">int</span> indexFrame;</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    </div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    </div>
+<div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="class_animation.html#a21b8b1d2a34507c1b53fe7e862dc03e5">  254</a></span>&#160;    <a class="code" href="class_animation.html#a21b8b1d2a34507c1b53fe7e862dc03e5">Animation</a>(<span class="keywordtype">string</span> name, initializer_list&lt;int&gt; frames, <span class="keywordtype">int</span> fps, <span class="keywordtype">bool</span> loop) {</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;        this-&gt;name = name;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        this-&gt;frames = frames;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;        this-&gt;loop = loop;</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        this-&gt;fps = fps;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        indexFrame = 0;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i : frames){</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;            indexFrame++;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            this-&gt;frame = i;</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        }</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    </div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    </div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="line" href="class_animation.html#aeea646590e7424edfb37c2ef102ce195">  271</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_animation.html#aeea646590e7424edfb37c2ef102ce195">NextFrame</a>() {</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordtype">int</span> c = 0;</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i : frames){</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            this-&gt;frame = i;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            c++;</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            <span class="keywordflow">if</span> (indexFrame == frames.size()) {</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                indexFrame = 0;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            <span class="keywordflow">if</span> (c &gt; indexFrame) {</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                indexFrame++;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            }</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        }</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;};</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#endif</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclass_afichmation_html_a5dd659052c26d05c2ba62156a943c6cd"><div class="ttname"><a href="class_afichmation.html#a5dd659052c26d05c2ba62156a943c6cd">Afichmation::Afichmation</a></div><div class="ttdeci">Afichmation()</div><div class="ttdoc">Constructor por defecto (no se implementa)</div><div class="ttdef"><b>Definition:</b> Afichmation.h:99</div></div>
+<div class="ttc" id="aclass_afichmation_html"><div class="ttname"><a href="class_afichmation.html">Afichmation</a></div><div class="ttdoc">Clase que se encarga de ejecutar las animaciones, hereda de Sprite por ende incorpora todos sus métod...</div><div class="ttdef"><b>Definition:</b> Afichmation.h:29</div></div>
+<div class="ttc" id="aclass_animation_html_aeea646590e7424edfb37c2ef102ce195"><div class="ttname"><a href="class_animation.html#aeea646590e7424edfb37c2ef102ce195">Animation::NextFrame</a></div><div class="ttdeci">void NextFrame()</div><div class="ttdoc">Método que realiza el intercambio de frames.</div><div class="ttdef"><b>Definition:</b> Afichmation.h:271</div></div>
+<div class="ttc" id="aclass_animation_html"><div class="ttname"><a href="class_animation.html">Animation</a></div><div class="ttdoc">Clase que resguarda los datos de una animación.</div><div class="ttdef"><b>Definition:</b> Afichmation.h:206</div></div>
+<div class="ttc" id="aclass_animation_html_a21b8b1d2a34507c1b53fe7e862dc03e5"><div class="ttname"><a href="class_animation.html#a21b8b1d2a34507c1b53fe7e862dc03e5">Animation::Animation</a></div><div class="ttdeci">Animation(string name, initializer_list&lt; int &gt; frames, int fps, bool loop)</div><div class="ttdoc">Método constructor.</div><div class="ttdef"><b>Definition:</b> Afichmation.h:254</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Generado por&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
+</small></address>
+</body>
+</html>
