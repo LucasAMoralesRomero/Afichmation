@@ -1,10 +1,10 @@
 #include "Afichmation.h"
 
-Afichmation::Afichmation(string name, bool loop, int width, int height){
+Afichmation::Afichmation(string path, bool loop, int width, int height){
 	texture = new Texture();
 	this->width = width;
 	this->height = height;
-	texture->loadFromFile(name);
+	texture->loadFromFile(path);
 	isLooping = loop;
 	setTexture(*texture);
 	frame = IntRect(0, 0, this->width, this->height);
