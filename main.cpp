@@ -8,9 +8,9 @@ int main(int argc, char *argv[]){
 	w->setFramerateLimit(60);
 	
 	Afichmation anim("spritesheet.png", true, 26, 30);
-	anim.Add("idle", {0, 1, 2, 1, 0}, 8, true);
+	anim.Add("idle", {0, 1, 2, 1, 0}, 8, false);
 	anim.Add("run", {3, 4, 5, 4}, 8, true);
-	anim.Add("jump", {6}, 8, false);
+	anim.Add("falls of", {6}, 8, true);
 	anim.Add("stairs", {7, 8}, 8, true);
 	anim.Play("idle");
 	
@@ -24,13 +24,12 @@ int main(int argc, char *argv[]){
 			if (Keyboard::isKeyPressed(Keyboard::A)) {
 				anim.Play("run");
 				anim.FlipX(true);
-				anim.setPosition(anim.getPosition().x - 2, anim.getPosition().y);
-			} else if (Keyboard::isKeyPressed(Keyboard::D)) {
+				anim.move(-2, 0);
+			}
+			if (Keyboard::isKeyPressed(Keyboard::D)) {
 				anim.Play("run");
 				anim.FlipX(false);
 				anim.setPosition(anim.getPosition().x + 2, anim.getPosition().y);
-			} else {
-				anim.Play("idle");
 			}
 			if (Keyboard::isKeyPressed(Keyboard::W)) {
 				anim.Play("stairs");
@@ -38,9 +37,12 @@ int main(int argc, char *argv[]){
 				anim.setPosition(anim.getPosition().x, anim.getPosition().y - 1);
 			}
 			if (Keyboard::isKeyPressed(Keyboard::S)) {
-				anim.Play("jump");
+				anim.Play("falls of");
 				anim.FlipY(false);
 				anim.setPosition(anim.getPosition().x, anim.getPosition().y + 4);
+			}
+			if (Keyboard::isKeyPressed(Keyboard::I)) {
+				anim.Play("idle");
 			}
 			if (Keyboard::isKeyPressed(Keyboard::Z)) {
 				anim.setScale(anim.getScale().x + 1.f, anim.getScale().x + 1.f);

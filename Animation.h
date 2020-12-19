@@ -50,6 +50,12 @@ private:
 	* @brief Indice de frame actual
 	*/
 	int indexFrame;
+	
+	/**
+	* @brief Indica si finalizó la animación
+	*/
+	bool finish;
+	
 public:
 	
 	/**
@@ -65,6 +71,7 @@ public:
 		this->loop = loop;
 		this->fps = fps;
 		indexFrame = 0;
+		finish = false;
 		for (int i : frames){
 			indexFrame++;
 			this->frame = i;
@@ -85,6 +92,9 @@ public:
 			}
 			if (c > indexFrame) {
 				indexFrame++;
+				if (!loop && indexFrame == frames.size()) {
+					finish = true;
+				}
 				break;
 			}
 		}

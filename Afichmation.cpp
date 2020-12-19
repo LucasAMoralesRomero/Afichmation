@@ -31,16 +31,17 @@ bool Afichmation::IsPlaying(string name) {
 }
 
 void Afichmation::Play(string name) {
-	playing = true;
-	if (name != animation->name) {
+	if (animation->name == name) {
+		return;
+	} else {
 		list<Animation>::iterator it = animations.begin();
 		while(it != animations.end()) {
 			if (name == it->name) {
 				animation = &(*it);
+				animation->finish = false;
 			}
 			it++;
 		}
-		SetCurrentFrame();	
 	}
 }
 
@@ -66,16 +67,18 @@ const Vector2f &Afichmation::getScale() {
 }
 
 void Afichmation::SetCurrentFrame() {
-	int x = width * animation->frame;
-	int y = 0;
-	while (x > (texture->getSize().x - width)) {
-		y++;
-		x -= texture->getSize().x;
+	if (!animation->finish) {
+		int x = width * animation->frame;
+		int y = 0;
+		while (x > (texture->getSize().x - width)) {
+			y++;
+			x -= texture->getSize().x;
+		}
+		frame.left = x;
+		frame.top = y * height;
+		animation->NextFrame();
+		setTextureRect(frame);	
 	}
-	frame.left = x;
-	frame.top = y * height;
-	animation->NextFrame();
-	setTextureRect(frame);
 }
 
 void Afichmation::UpdateScale() {
@@ -87,7 +90,7 @@ void Afichmation::UpdateScale() {
 
 void Afichmation::Update() {
 	UpdateScale();
-	if (playing) {
+	if (!animation->finish) {
 		if (clock.getElapsedTime().asSeconds() > 1.0f / animation->fps) {
 			SetCurrentFrame();
 			clock.restart();

@@ -1,6 +1,6 @@
 /**
 * @file Afichmation.h
-* @version 0.9
+* @version 1.0
 * @date 12/13/2020
 * @author Nicolás Capel
 * @brief Clase Afichmation para utilización de spritesheets con SFML 2.5, incluye clase Animation. Hereda de Sprite.
@@ -92,6 +92,7 @@ private:
 	* @brief Método que actualiza las escalas del sprite
 	*/
 	void UpdateScale();
+	
 public:
 	
 	/**
@@ -183,5 +184,11 @@ public:
 	* @param Retorna la escala del sprite en formato Vector2f
 	*/
 	const Vector2f &getScale();
+	
+	/**
+	* @brief Establece velocidad de desplazamiento
+	* @param Vector2f velocidad
+	*/
+	
 };
 #endif
