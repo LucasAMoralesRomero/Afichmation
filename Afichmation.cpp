@@ -7,6 +7,19 @@ Afichmation::Afichmation(string path, bool loop, int width, int height){
 	texture->loadFromFile(path);
 	isLooping = loop;
 	setTexture(*texture);
+	Setup();
+}
+
+Afichmation::Afichmation(Texture &tex, bool loop, int width, int height) {
+	texture = &tex;
+	this->width = width;
+	this->height = height;
+	isLooping = loop;
+	setTexture(tex);
+	Setup();
+}
+
+void Afichmation::Setup() {
 	frame = IntRect(0, 0, this->width, this->height);
 	setTextureRect(frame);
 	playing = false;

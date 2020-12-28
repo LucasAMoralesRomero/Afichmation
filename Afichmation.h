@@ -1,7 +1,7 @@
 /**
 * @file Afichmation.h
 * @version 1.0
-* @date 12/13/2020
+* @date 12/28/2020
 * @author Nicolás Capel
 * @brief Clase Afichmation para utilización de spritesheets con SFML 2.5, incluye clase Animation. Hereda de Sprite.
 * @code
@@ -93,6 +93,11 @@ private:
 	*/
 	void UpdateScale();
 	
+	/**
+	* @brief Configuraciones comunes en el constructor
+	*/
+	void Setup();
+	
 public:
 	
 	/**
@@ -108,6 +113,15 @@ public:
 	* @param height Alto del frame
 	*/
 	Afichmation(string path, bool loop, int width, int height);
+	
+	/**
+	* @brief Constructor.
+	* @param tex Textura spritesheet para aplicar al Sprite
+	* @param loop Establece la animación en loop
+	* @param width Ancho del frame
+	* @param height Alto del frame
+	*/
+	Afichmation(Texture &tex, bool loop, int width, int height);
 	
 	/**
 	* @brief Destructor de clase (no se implementa)
