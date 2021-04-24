@@ -96,9 +96,9 @@ void Afichmation::SetCurrentFrame() {
 
 void Afichmation::UpdateScale() {
 	if (flippedX && getScale().x > 0) setScale(-getScale().x, getScale().y);
-	if (!flippedX && getScale().x < 0) setScale(abs(getScale().x), getScale().y);
+	if (!flippedX && getScale().x < 0) setScale(getScale().x, getScale().y);
 	if (flippedY && getScale().y > 0) setScale(getScale().x, -getScale().y);
-	if (!flippedY && getScale().y < 0) setScale(getScale().x, abs(getScale().y));
+	if (!flippedY && getScale().y < 0) setScale(getScale().x, getScale().y);
 }
 
 void Afichmation::Update() {
