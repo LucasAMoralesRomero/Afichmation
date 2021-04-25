@@ -1,7 +1,7 @@
 /**
 * @file Afichmation.h
 * @version 1.0
-* @date 12/28/2020
+* @date 12/13/2020
 * @author Nicolás Capel
 * @brief Clase Afichmation para utilización de spritesheets con SFML 2.5, incluye clase Animation. Hereda de Sprite.
 * @code
@@ -54,6 +54,11 @@ private:
 	Animation *animation;
 	
 	/**
+	* @brief Propiedad bandera que sirve saber si el sprite está ejecutando una animación en loop
+	*/
+	bool isLooping;
+	
+	/**
 	* @brief Propiedad bandera que sirve saber si el sprite se debe voltear en horizontal o no
 	*/
 	bool flippedX;
@@ -62,11 +67,6 @@ private:
 	* @brief Propiedad bandera que sirve saber si el sprite se debe voltear en vertical o no
 	*/
 	bool flippedY;
-	
-	/**
-	* @brief Propiedad bandera que sirve saber si el sprite está ejecutando una animación en loop
-	*/
-	bool isLooping;
 	
 	/**
 	* @brief Propiedad bandera que sirve saber se está ejecutando una animación actualmente
@@ -93,11 +93,6 @@ private:
 	*/
 	void UpdateScale();
 	
-	/**
-	* @brief Configuraciones comunes en el constructor
-	*/
-	void Setup();
-	
 public:
 	
 	/**
@@ -107,7 +102,7 @@ public:
 	
 	/**
 	* @brief Constructor.
-	* @param path Ruta al archivo de sprites
+	* @param path Ruta al archivo de spritesheet
 	* @param loop Establece la animación en loop
 	* @param width Ancho del frame
 	* @param height Alto del frame
@@ -115,8 +110,8 @@ public:
 	Afichmation(string path, bool loop, int width, int height);
 	
 	/**
-	* @brief Constructor.
-	* @param tex Textura spritesheet para aplicar al Sprite
+	* @brief Sobrecarga de constructor.
+	* @param tex Textura para aplicar al sprite
 	* @param loop Establece la animación en loop
 	* @param width Ancho del frame
 	* @param height Alto del frame

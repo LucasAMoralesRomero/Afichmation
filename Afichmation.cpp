@@ -7,7 +7,15 @@ Afichmation::Afichmation(string path, bool loop, int width, int height){
 	texture->loadFromFile(path);
 	isLooping = loop;
 	setTexture(*texture);
-	Setup();
+	frame = IntRect(0, 0, this->width, this->height);
+	setTextureRect(frame);
+	playing = false;
+	flippedX = false;
+	flippedY = false;
+	setScale(getScale());
+	setOrigin(width / 2, height / 2);
+	setPosition((width * getScale().x) / 2, (height * getScale().y) / 2);
+	clock.restart();
 }
 
 Afichmation::Afichmation(Texture &tex, bool loop, int width, int height) {
@@ -16,10 +24,6 @@ Afichmation::Afichmation(Texture &tex, bool loop, int width, int height) {
 	this->height = height;
 	isLooping = loop;
 	setTexture(tex);
-	Setup();
-}
-
-void Afichmation::Setup() {
 	frame = IntRect(0, 0, this->width, this->height);
 	setTextureRect(frame);
 	playing = false;
@@ -96,9 +100,17 @@ void Afichmation::SetCurrentFrame() {
 
 void Afichmation::UpdateScale() {
 	if (flippedX && getScale().x > 0) setScale(-getScale().x, getScale().y);
-	if (!flippedX && getScale().x < 0) setScale(getScale().x, getScale().y);
+	if (!flippedX && getScale().x < 0) {
+		int aux = getScale().x * 100;
+		float finalAux = (-1 * (aux)) / 100.f;
+		setScale(finalAux, getScale().y);
+	}
 	if (flippedY && getScale().y > 0) setScale(getScale().x, -getScale().y);
-	if (!flippedY && getScale().y < 0) setScale(getScale().x, getScale().y);
+	if (!flippedY && getScale().y < 0) {
+		int aux = getScale().y * 100;
+		float finalAux = (-1 * (aux)) / 100.f;
+		setScale(getScale().x, finalAux);
+	}
 }
 
 void Afichmation::Update() {
