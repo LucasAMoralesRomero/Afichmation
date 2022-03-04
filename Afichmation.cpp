@@ -85,7 +85,7 @@ const Vector2f &Afichmation::getScale() {
 
 void Afichmation::SetCurrentFrame() {
 	if (!animation->finish) {
-		int x = width * animation->frame;
+		int x = width * animation->indexFrame;
 		int y = 0;
 		while (x > (texture->getSize().x - width)) {
 			y++;
@@ -93,8 +93,6 @@ void Afichmation::SetCurrentFrame() {
 		}
 		frame.left = x;
 		frame.top = y * height;
-		animation->NextFrame();
-		setTextureRect(frame);	
 	}
 }
 
@@ -114,11 +112,11 @@ void Afichmation::UpdateScale() {
 }
 
 void Afichmation::Update() {
-	UpdateScale();
-	if (!animation->finish) {
-		if (clock.getElapsedTime().asSeconds() > 1.0f / animation->fps) {
-			SetCurrentFrame();
-			clock.restart();
-		}
+	if (clock.getElapsedTime().asSeconds() > 1.0f / animation->fps) {
+		animation->NextFrame();
+		clock.restart();
 	}
+	UpdateScale();
+	SetCurrentFrame();
+	setTextureRect(frame);
 }

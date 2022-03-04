@@ -1,7 +1,7 @@
 /**
 * @file Animation.h
 * @version 1.0
-* @date 12/13/2020
+* @date 03/04/2022
 * @author Nicolás Capel
 * @brief Clase de utilidad para Afichmation recordar animaciones.
 */
@@ -9,7 +9,9 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
+#include <vector>
 #include <initializer_list>
+#include <iostream>
 
 using namespace std;
 
@@ -29,8 +31,14 @@ private:
 	/**
 	* @brief Propiedad del tipo lista de enteros, contiene una lista de valores que representan en enteros los frames
 	*/
-	initializer_list<int> frames;
+	vector<int> frames;
+
+	/**
+	* @brief Propiedad que funcoina de iterador para la lista de frames
+	*/
 	
+	vector<int>::iterator it;
+
 	/**
 	* @brief Propiedad para recordar si debe estar en loop o no la animación
 	*/
@@ -67,37 +75,32 @@ public:
 	*/
 	Animation(string name, initializer_list<int> frames, int fps, bool loop) {
 		this->name = name;
-		this->frames = frames;
 		this->loop = loop;
 		this->fps = fps;
-		indexFrame = 0;
+		this->frame = 0;
 		finish = false;
-		for (int i : frames){
-			indexFrame++;
-			this->frame = i;
-			break;
+		initializer_list<int>::iterator iter = frames.begin();
+		while (iter != frames.end()) {
+			this->frames.push_back(*iter);
+			iter++;
 		}
+		this->indexFrame = *this->frames.begin();
 	}
 	
 	/**
 	* @brief Método que realiza el intercambio de frames
 	*/
+
 	void NextFrame() {
-		int c = 0;
-		for (int i : frames){
-			this->frame = i;
-			c++;
-			if (indexFrame == frames.size()) {
-				indexFrame = 0;
-			}
-			if (c > indexFrame) {
-				indexFrame++;
-				if (!loop && indexFrame == frames.size()) {
-					finish = true;
-				}
-				break;
+		if (frame >= frames.size()) {
+			frame = 0;
+			if (!loop) {
+				finish = true;
 			}
 		}
+		it = frames.begin() + frame;
+		indexFrame = *it;
+		frame++;
 	}
 	
 };

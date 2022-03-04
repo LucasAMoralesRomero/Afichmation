@@ -1,7 +1,7 @@
 /**
 * @file Afichmation.h
 * @version 1.0
-* @date 12/13/2020
+* @date 03/04/2022
 * @author Nicolás Capel
 * @brief Clase Afichmation para utilización de spritesheets con SFML 2.5, incluye clase Animation. Hereda de Sprite.
 * @code
